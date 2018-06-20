@@ -64,21 +64,22 @@ namespace BSALoader
             IList<string> lines = new List<string>();
             string[] files = System.IO.Directory.GetFiles(pathmor, "*.bsa");
             IList<string> filesnames = new List<string>();
+            string[] allLines;
+            IList<string> allLinesL = new List<string>();
             foreach (string filedir in files)
             {
-                file = Path.GetFileName(filedir);
+                file = "fallback-archive=" + Path.GetFileName(filedir);
                 filesnames.Add(file);
                 Console.WriteLine(file);
                 foreach (string line in File.ReadLines(pathow))
                 {
-                    if (line.Contains(file))
+                    if (line.Contains(".bsa"))
                     {
                         lines.Add(line);
                         Console.WriteLine(line);
                     }
                     else
                     {
-                        lines.Add("0");
                     }
                 }
             }
@@ -88,15 +89,31 @@ namespace BSALoader
             Console.WriteLine(filesnames.Count);
             for (int i = 0; i < filesnames.Count; i++)
             {
-                if (lines.Contains("fallback-archive=" + filesnames[i]))
+                if (lines.Contains(filesnames[i]))
                 {
                 }
                 else
                 {
-                    File.AppendAllText(pathow, (Environment.NewLine + "fallback-archive=" + filesnames[i]));
+                    File.AppendAllText(pathow, (Environment.NewLine + filesnames[i]));
                     counter++;
                 }
             }
+            allLines = File.ReadAllLines(pathow);
+            allLinesL = allLines.ToList();
+
+            for (int i = 0; i < lines.Count; i++)
+            {
+                if (filesnames.Contains(lines[i]))
+                {
+                    continue;
+                }
+                else
+                {
+                    allLinesL.Remove(lines[i]);
+                }
+            }
+            File.Delete(pathow);
+            File.AppendAllLines(pathow, allLinesL);
         }
     }
 }
