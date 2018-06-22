@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -112,6 +113,9 @@ namespace BSALoader
                     allLinesL.Remove(lines[i]);
                 }
             }
+            File.Delete(pathow);
+            File.AppendAllLines(pathow, allLinesL);
+            allLinesL = File.ReadAllLines(pathow).Where(s => s.Trim() != string.Empty).ToArray();
             File.Delete(pathow);
             File.AppendAllLines(pathow, allLinesL);
         }
