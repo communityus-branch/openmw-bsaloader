@@ -64,6 +64,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(414, 141);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -80,7 +81,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(414, 28);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -126,7 +127,7 @@
             this.buttonBrowseO.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonBrowseO.Location = new System.Drawing.Point(354, 4);
             this.buttonBrowseO.Name = "buttonBrowseO";
-            this.buttonBrowseO.Size = new System.Drawing.Size(57, 20);
+            this.buttonBrowseO.Size = new System.Drawing.Size(57, 22);
             this.buttonBrowseO.TabIndex = 0;
             this.buttonBrowseO.Text = "Обзор...";
             this.buttonBrowseO.UseVisualStyleBackColor = true;
