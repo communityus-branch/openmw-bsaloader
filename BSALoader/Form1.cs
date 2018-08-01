@@ -65,8 +65,6 @@ namespace BSALoader
             IList<string> lines = new List<string>();
             string[] files = System.IO.Directory.GetFiles(pathmor, "*.bsa");
             IList<string> filesnames = new List<string>();
-            string[] allLines;
-            IList<string> allLinesL = new List<string>();
             foreach (string filedir in files)
             {
                 file = "fallback-archive=" + Path.GetFileName(filedir);
@@ -84,9 +82,6 @@ namespace BSALoader
                     }
                 }
             }
-            lines.ToArray();
-            filesnames.ToArray();
-
             Console.WriteLine(filesnames.Count);
             for (int i = 0; i < filesnames.Count; i++)
             {
@@ -99,8 +94,8 @@ namespace BSALoader
                     counter++;
                 }
             }
-            allLines = File.ReadAllLines(pathow);
-            allLinesL = allLines.ToList();
+            string[] allLines = File.ReadAllLines(pathow);
+            IList<string> allLinesL = allLines.ToList();
 
             for (int i = 0; i < lines.Count; i++)
             {

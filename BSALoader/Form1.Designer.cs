@@ -30,16 +30,16 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.browseButtonM = new System.Windows.Forms.Button();
-            this.buttonBrowseO = new System.Windows.Forms.Button();
-            this.updateButton = new System.Windows.Forms.Button();
-            this.textBoxO = new System.Windows.Forms.TextBox();
             this.textBoxM = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonBrowseO = new System.Windows.Forms.Button();
+            this.textBoxO = new System.Windows.Forms.TextBox();
             this.labelM = new System.Windows.Forms.Label();
             this.labelO = new System.Windows.Forms.Label();
             this.browserM = new System.Windows.Forms.FolderBrowserDialog();
             this.browserO = new System.Windows.Forms.FolderBrowserDialog();
+            this.updateButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -80,8 +80,29 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(414, 28);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // browseButtonM
+            // 
+            this.browseButtonM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.browseButtonM.Location = new System.Drawing.Point(354, 3);
+            this.browseButtonM.Name = "browseButtonM";
+            this.browseButtonM.Size = new System.Drawing.Size(57, 22);
+            this.browseButtonM.TabIndex = 0;
+            this.browseButtonM.Text = "Обзор...";
+            this.browseButtonM.UseVisualStyleBackColor = true;
+            this.browseButtonM.Click += new System.EventHandler(this.browseButtonM_Click);
+            // 
+            // textBoxM
+            // 
+            this.textBoxM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxM.Location = new System.Drawing.Point(3, 4);
+            this.textBoxM.Name = "textBoxM";
+            this.textBoxM.Size = new System.Drawing.Size(345, 20);
+            this.textBoxM.TabIndex = 1;
+            this.textBoxM.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -96,20 +117,9 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(414, 28);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // browseButtonM
-            // 
-            this.browseButtonM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.browseButtonM.Location = new System.Drawing.Point(354, 3);
-            this.browseButtonM.Name = "browseButtonM";
-            this.browseButtonM.Size = new System.Drawing.Size(57, 22);
-            this.browseButtonM.TabIndex = 0;
-            this.browseButtonM.Text = "Обзор...";
-            this.browseButtonM.UseVisualStyleBackColor = true;
-            this.browseButtonM.Click += new System.EventHandler(this.browseButtonM_Click);
             // 
             // buttonBrowseO
             // 
@@ -122,19 +132,6 @@
             this.buttonBrowseO.UseVisualStyleBackColor = true;
             this.buttonBrowseO.Click += new System.EventHandler(this.buttonBrowseO_Click);
             // 
-            // updateButton
-            // 
-            this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updateButton.AutoSize = true;
-            this.updateButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.updateButton.Location = new System.Drawing.Point(174, 115);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(66, 23);
-            this.updateButton.TabIndex = 2;
-            this.updateButton.Text = "Обновить";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
-            // 
             // textBoxO
             // 
             this.textBoxO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -143,15 +140,6 @@
             this.textBoxO.Size = new System.Drawing.Size(345, 20);
             this.textBoxO.TabIndex = 1;
             this.textBoxO.TextChanged += new System.EventHandler(this.textBoxO_TextChanged);
-            // 
-            // textBoxM
-            // 
-            this.textBoxM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxM.Location = new System.Drawing.Point(3, 4);
-            this.textBoxM.Name = "textBoxM";
-            this.textBoxM.Size = new System.Drawing.Size(345, 20);
-            this.textBoxM.TabIndex = 1;
-            this.textBoxM.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // labelM
             // 
@@ -172,6 +160,19 @@
             this.labelO.Size = new System.Drawing.Size(144, 13);
             this.labelO.TabIndex = 4;
             this.labelO.Text = "Напишите путь к OpenMW:";
+            // 
+            // updateButton
+            // 
+            this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updateButton.AutoSize = true;
+            this.updateButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.updateButton.Location = new System.Drawing.Point(174, 115);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(66, 23);
+            this.updateButton.TabIndex = 2;
+            this.updateButton.Text = "Обновить";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // Form1
             // 
@@ -201,11 +202,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button buttonBrowseO;
         private System.Windows.Forms.TextBox textBoxO;
-        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Label labelM;
         private System.Windows.Forms.Label labelO;
         private System.Windows.Forms.FolderBrowserDialog browserM;
         private System.Windows.Forms.FolderBrowserDialog browserO;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 
