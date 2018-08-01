@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/unnamedguy/BSALoader.svg?branch=master)](https://travis-ci.org/unnamedguy/BSALoader)
 
-BSALoader для The Elder Scrolls III: Morrowind – программа для записи названий файлов с расширением .bsa в файл openmw.cfg.
+BSALoader for The Elder Scrolls III: Morrowind is a program for writing file names with the extension .bsa in the file openmw.cfg.
 
-Версия: 1.2
+Version: 1.2
 
-Путь к OpenMW: Документы/My Games/OpenMW.
+Path to OpenMW: "Documents/My Games/OpenMW".
